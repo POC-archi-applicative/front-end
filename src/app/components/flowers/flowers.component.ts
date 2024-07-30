@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {RestApiService} from "../../services/rest-api.service";
-import {Product} from "../../utils/product";
+import { Component, OnInit } from '@angular/core';
+import { RestApiService } from '../../services/rest-api.service';
+import { Product } from '../../utils/product';
 
 @Component({
   selector: 'app-flowers',
@@ -14,15 +14,13 @@ export class FlowersComponent implements OnInit {
 
   public flowers : Product[] = [];
 
-
-
   ngOnInit(): void {
     this.restApi.getCatalog().subscribe({
-      next: value => this.flowers.push(value),
+      next: (value: Product[]) => {
+        console.log('Fetched products:', value);
+        this.flowers = value;
+      },
       error: err => console.log(err)
-    }
-    )
+    });
   }
-
-
 }

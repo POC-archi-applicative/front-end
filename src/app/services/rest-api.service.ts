@@ -17,10 +17,8 @@ export class RestApiService {
     })
   };
 
-  getCatalog = (): Observable<Product> => {
+  getCatalog = (): Observable<Product[]> => {
     let url = "http://localhost:8080/allProducts";
-    return this.http.get<Product>(url, this.httpOptions);
+    return this.http.get<Product[]>(url, this.httpOptions);
   };
-
-
 }

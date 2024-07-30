@@ -1,2 +1,10 @@
-<div>
-  <p>{{ flowers[0].id }}</p></div>
+<div *ngIf="flowers.length > 0; else noFlowers">
+  <p>Product name : {{ flowers[0].name }}</p>
+  <p>Product description : {{ flowers[0].description }}</p>
+  <p>Product color : {{ flowers[0].color }}</p>
+</div>
+<!--<p *ngIf="!flowers || flowers.length === 0">No flowers available</p>
+-->
+<ng-template #noFlowers>
+  <p>No flowers available</p>
+</ng-template>
