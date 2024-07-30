@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RestApiService} from "../../services/rest-api.service";
+import {Product} from "../../utils/product";
 
 @Component({
   selector: 'app-flowers',
@@ -11,7 +12,9 @@ export class FlowersComponent implements OnInit {
   constructor(private restApi: RestApiService) {
   }
 
-  public flowers : Object[] = [];
+  public flowers : Product[] = [];
+
+
 
   ngOnInit(): void {
     this.restApi.getCatalog().subscribe({

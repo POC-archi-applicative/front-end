@@ -9,7 +9,7 @@ import { FlowersComponent } from './components/flowers/flowers.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FlowersComponent
+    FlowersComponent,
   ],
   imports: [
     BrowserModule,
